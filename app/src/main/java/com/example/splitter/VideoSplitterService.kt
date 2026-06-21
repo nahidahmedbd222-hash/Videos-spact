@@ -9,6 +9,7 @@ import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import com.example.MainActivity
 import com.example.database.AppDatabase
 import com.example.database.HistoryEntity
 import com.example.database.HistoryRepository
@@ -247,7 +248,7 @@ class VideoSplitterService : Service() {
     }
 
     private fun createNotification(title: String, body: String, progress: Float): Notification {
-        val notificationIntent = Intent(this, Class.forName("com.example.MainActivity"))
+        val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this, 0, notificationIntent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
@@ -279,7 +280,7 @@ class VideoSplitterService : Service() {
 
     private fun updateNotificationFinished(title: String, body: String) {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val notificationIntent = Intent(this, Class.forName("com.example.MainActivity"))
+        val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this, 0, notificationIntent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT

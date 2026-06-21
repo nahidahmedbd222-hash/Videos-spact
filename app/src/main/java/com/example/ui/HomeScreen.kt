@@ -510,7 +510,7 @@ fun HomeScreen(
             item {
                 Button(
                     onClick = { viewModel.startSplittingProcess() },
-                    enabled = selectedVideos.isNotEmpty() && progressState?.isFinished != false && progressState?.isFailed != false,
+                    enabled = selectedVideos.isNotEmpty() && (progressState == null || progressState?.isFinished == true || progressState?.isFailed == true),
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp)
