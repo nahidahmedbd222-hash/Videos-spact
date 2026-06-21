@@ -1,0 +1,6 @@
+{
+  "name": "Video Splitter Pro",
+  "description": "High-speed video splitting utility without any quality loss, featuring custom durations, batch processing, background execution, and a built-in media preview player.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
